@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from './Components/Header/Header';
 import { newsCategory } from './Components/NewsCategory/NewsCategory';
 import { NewsList } from './Components/NewsList/NewsList';
+import Loading from './Components/Pagination/Loading';
 import Pagination from './Components/Pagination/Pagination';
 
 const fakeNews = [
@@ -44,6 +45,7 @@ class App extends Component {
             </div>
             <NewsList news={ fakeNews }/>
             <Pagination/>
+            <Loading/>
           </div>
         </div>
       </div>
