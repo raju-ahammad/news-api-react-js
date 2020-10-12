@@ -4,9 +4,15 @@ import "../src/main.scss";
 import App from "./App";
 import './index.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+if(process.env.NODE_ENV !== "development") {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+  
+}else {
+  ReactDOM.render(<App />, document.getElementById('root'));
+}

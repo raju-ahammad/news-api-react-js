@@ -1,4 +1,5 @@
 
+import axios from 'axios';
 import React, { Component } from 'react';
 import Header from './Components/Header/Header';
 import { newsCategory } from './Components/NewsCategory/NewsCategory';
@@ -32,7 +33,17 @@ const fakeNews = [
 
 class App extends Component {
 
-
+  componentDidMount(){
+    const url = `${process.env.REACT_APP_NEWS_URL}?apiKey=${process.env.REACT_APP_API_KEY}&category=technology`;
+    axios
+    .get(url)
+    .then((response)=>{
+      console.log(response);
+    })
+    .catch((e)=> {
+      console.log(e);
+    })
+  }
   render() {
     return (
       <div className="container">
